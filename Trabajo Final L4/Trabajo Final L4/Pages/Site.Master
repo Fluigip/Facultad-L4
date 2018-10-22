@@ -6,21 +6,18 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="../Styles/lib/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../Styles/lib/dataTables.bootstrap4.css"/>
-    <asp:ContentPlaceHolder ID="head" runat="server">        
+    <link rel="stylesheet" type="text/css" href="../Styles/lib/dataTables.bootstrap4.css" />
+    <script src="../Scripts/lib/jquery-3.3.1.js"></script>
+    <script src="../Scripts/lib/bootstrap.js"></script>
+    <script src="../Scripts/lib/jquery.dataTables.js"></script>
+    <script src="../Scripts/lib/dataTables.bootstrap4.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+    <div class="container">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            
         </asp:ContentPlaceHolder>
-        <script src="../Scripts/lib/jquery-3.3.1.js"></script>        
-        <script src="../Scripts/lib/bootstrap.js"></script>
-        <script src="../Scripts/lib/jquery.dataTables.js"></script>
-        <script src="../Scripts/lib/dataTables.bootstrap4.js"></script>
     </div>
-    </form>
 </body>
 </html>

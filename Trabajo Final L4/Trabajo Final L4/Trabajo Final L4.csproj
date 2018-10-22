@@ -76,6 +76,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ejemplo\ABM.aspx.cs">
+      <DependentUpon>ABM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ejemplo\ABM.aspx.designer.cs">
+      <DependentUpon>ABM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ejemplo\Ejemplo.cs" />
+    <Compile Include="Ejemplo\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ejemplo\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Accion.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -149,6 +164,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Ejemplo\ABM.aspx" />
+    <Content Include="Ejemplo\ABM.js" />
+    <Content Include="Ejemplo\Ejemplo.css" />
+    <Content Include="Ejemplo\Lista.aspx" />
+    <Content Include="Ejemplo\Lista.js" />
     <Content Include="Images\sort_asc.png" />
     <Content Include="Images\sort_asc_disabled.png" />
     <Content Include="Images\sort_both.png" />
