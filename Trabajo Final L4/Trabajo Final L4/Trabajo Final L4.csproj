@@ -56,6 +56,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -133,6 +134,9 @@
     <Compile Include="Models\RecetaAgroquimicaDetalle.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Solicitud.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -153,6 +157,20 @@
     <Compile Include="Pages\AgroquimicosABM.aspx.designer.cs">
       <DependentUpon>AgroquimicosABM.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RecetasAgroquimicas.aspx.cs">
+      <DependentUpon>RecetasAgroquimicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RecetasAgroquimicas.aspx.designer.cs">
+      <DependentUpon>RecetasAgroquimicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RecetasAgroquimicasABM.aspx.cs">
+      <DependentUpon>RecetasAgroquimicasABM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RecetasAgroquimicasABM.aspx.designer.cs">
+      <DependentUpon>RecetasAgroquimicasABM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -160,9 +178,22 @@
     <Compile Include="Pages\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Solicitudes.aspx.cs">
+      <DependentUpon>Solicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Solicitudes.aspx.designer.cs">
+      <DependentUpon>Solicitudes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SolicitudesABM.aspx.cs">
+      <DependentUpon>SolicitudesABM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SolicitudesABM.aspx.designer.cs">
+      <DependentUpon>SolicitudesABM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Ejemplo\ABM.aspx" />
     <Content Include="Ejemplo\ABM.js" />
@@ -186,10 +217,17 @@
     </Content>
     <Content Include="Pages\Agroquimicos.aspx" />
     <Content Include="Pages\AgroquimicosABM.aspx" />
+    <Content Include="Pages\RecetasAgroquimicas.aspx" />
+    <Content Include="Pages\RecetasAgroquimicasABM.aspx" />
+    <Content Include="Pages\Solicitudes.aspx" />
+    <Content Include="Pages\SolicitudesABM.aspx" />
+    <Content Include="Scripts\AgroquimicosLista.js" />
     <Content Include="Scripts\lib\bootstrap.js" />
     <Content Include="Scripts\lib\dataTables.bootstrap4.js" />
     <Content Include="Scripts\lib\jquery-3.3.1.js" />
     <Content Include="Scripts\lib\jquery.dataTables.js" />
+    <Content Include="Scripts\RecetasAgroLista.js" />
+    <Content Include="Scripts\SolicitudesLista.js" />
     <Content Include="Styles\lib\bootstrap.css" />
     <Content Include="Styles\lib\dataTables.bootstrap4.css" />
     <Content Include="Web.config" />
@@ -210,6 +248,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>

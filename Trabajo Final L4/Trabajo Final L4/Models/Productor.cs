@@ -19,6 +19,7 @@ namespace Trabajo_Final_L4.Models
         {
             this.CampoFinca = new HashSet<CampoFinca>();
             this.RecetaAgroquimica = new HashSet<RecetaAgroquimica>();
+            this.Solicitud = new HashSet<Solicitud>();
         }
     
         public int Id { get; set; }
@@ -30,5 +31,7 @@ namespace Trabajo_Final_L4.Models
         public virtual ICollection<CampoFinca> CampoFinca { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RecetaAgroquimica> RecetaAgroquimica { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Solicitud> Solicitud { get; set; }
     }
 }

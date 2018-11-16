@@ -14,6 +14,12 @@ namespace Trabajo_Final_L4.Models
     
     public partial class CampoFinca
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CampoFinca()
+        {
+            this.Solicitud = new HashSet<Solicitud>();
+        }
+    
         public int Id { get; set; }
         public string Calle { get; set; }
         public int Numero { get; set; }
@@ -23,5 +29,7 @@ namespace Trabajo_Final_L4.Models
         public int IdProductor { get; set; }
     
         public virtual Productor Productor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Solicitud> Solicitud { get; set; }
     }
 }

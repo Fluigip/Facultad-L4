@@ -30,11 +30,12 @@ namespace Trabajo_Final_L4.Models
         public virtual DbSet<Agroquimico> Agroquimico { get; set; }
         public virtual DbSet<CampoFinca> CampoFinca { get; set; }
         public virtual DbSet<Perfil> Perfil { get; set; }
+        public virtual DbSet<PerfilAccion> PerfilAccion { get; set; }
         public virtual DbSet<Productor> Productor { get; set; }
         public virtual DbSet<RecetaAgroquimica> RecetaAgroquimica { get; set; }
         public virtual DbSet<RecetaAgroquimicaDetalle> RecetaAgroquimicaDetalle { get; set; }
+        public virtual DbSet<Solicitud> Solicitud { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Vendedor> Vendedor { get; set; }
-        public virtual DbSet<PerfilAccion> PerfilAccion { get; set; }
     }
 }
