@@ -10,6 +10,6 @@
 namespace Trabajo_Final_L4.Pages {
     
     
-    public partial class Solicitudes {
+    public partial class VentaAgroquimico {
     }
 }

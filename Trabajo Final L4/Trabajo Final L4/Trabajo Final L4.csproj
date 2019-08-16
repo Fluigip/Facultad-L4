@@ -192,6 +192,20 @@
     <Compile Include="Pages\SolicitudesABM.aspx.designer.cs">
       <DependentUpon>SolicitudesABM.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\VentaAgroquimicaABM.aspx.cs">
+      <DependentUpon>VentaAgroquimicaABM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\VentaAgroquimicaABM.aspx.designer.cs">
+      <DependentUpon>VentaAgroquimicaABM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VentaAgroquimico.aspx.cs">
+      <DependentUpon>VentaAgroquimico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\VentaAgroquimico.aspx.designer.cs">
+      <DependentUpon>VentaAgroquimico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -221,13 +235,16 @@
     <Content Include="Pages\RecetasAgroquimicasABM.aspx" />
     <Content Include="Pages\Solicitudes.aspx" />
     <Content Include="Pages\SolicitudesABM.aspx" />
+    <Content Include="Pages\VentaAgroquimicaABM.aspx" />
+    <Content Include="Pages\VentaAgroquimico.aspx" />
     <Content Include="Scripts\AgroquimicosLista.js" />
     <Content Include="Scripts\lib\bootstrap.js" />
     <Content Include="Scripts\lib\dataTables.bootstrap4.js" />
     <Content Include="Scripts\lib\jquery-3.3.1.js" />
     <Content Include="Scripts\lib\jquery.dataTables.js" />
-    <Content Include="Scripts\RecetasAgroLista.js" />
+    <Content Include="Scripts\RecetaAgroLista.js" />
     <Content Include="Scripts\SolicitudesLista.js" />
+    <Content Include="Scripts\VentaAgroLista.js" />
     <Content Include="Styles\lib\bootstrap.css" />
     <Content Include="Styles\lib\dataTables.bootstrap4.css" />
     <Content Include="Web.config" />

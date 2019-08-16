@@ -25,15 +25,15 @@
             <tbody>
                 <%foreach (var item in  ListaSolicitudes) {%>
                     <tr>
-                        <th><%=item.fecha%></th>
-                        <th><%=item.Productor%></th>
+                        <th><%=item.Fecha%></th>
+                        <th><%=item.Productor.Nombre%></th>
                         <th><%=item.CampoFinca.Calle%></th>
                         <th><%=item.AgenteFitosanitario.Nombre%></th>
-                        <th><%=item.estado%></th>                       
+                        <th><%=item.Estado%></th>                       
                         <td>
                             <div class="btn-group" role="group" aria-label="Acciones">
-                              <a href="SolicitudesABM.aspx" class="btn btn-outline-success" role="button">Editar</a>       
-                              <button type="button" class="btn btn-outline-danger btnDelete" data-id="<%=item.id %>">Eliminar</button>
+                              <a href="SolicitudesABM.aspx?id=<%=item.Id %>" class="btn btn-outline-success" role="button">Editar</a>       
+                              <button type="button" class="btn btn-outline-danger btnDelete" data-id="<%=item.Id %>">Eliminar</button>
                             </div>
                         </td>
                     </tr>

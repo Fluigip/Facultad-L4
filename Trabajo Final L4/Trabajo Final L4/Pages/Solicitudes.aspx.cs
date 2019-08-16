@@ -19,7 +19,7 @@ namespace Trabajo_Final_L4.Pages
       try
       {
         FinalEntities database = new FinalEntities();
-        ListaSolicitudes = database.Solicitud.OrderBy(x => x.fecha).ToList();
+        ListaSolicitudes = database.Solicitud.OrderBy(x => x.Fecha).ToList();
       }
       catch (Exception)
       {

@@ -21,11 +21,11 @@ namespace Trabajo_Final_L4.Pages
 
     FinalEntities dataBase = new FinalEntities();
 
-    public string fecha { get { return soli == null ? "" : soli.fecha.ToString(); } }
-    public string productor { get { return soli == null ? "" : soli.Productor.Nombre; } }
-    public string campoFinca { get { return soli == null ? "" : soli.CampoFinca.Calle; } }
-    public string agenteFitosanitario { get { return soli == null ? "" : soli.AgenteFitosanitario.Nombre; } }
-    public string estado { get { return soli == null ? "" : soli.estado; } }
+    public string fecha { get { return soli == null ? "" : soli.Fecha.ToString("yyyy-MM-dd"); } }
+    public int productor { get { return soli == null ? -1 : soli.IdProductor; } }
+    public int campoFinca { get { return soli == null ? -1 : soli.IdCampoFinca; } }
+    public int agenteFitosanitario { get { return soli == null ? -1 : soli.IdAgenteFitosanitario; } }
+    public string estado { get { return soli == null ? "" : soli.Estado; } }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -33,7 +33,7 @@ namespace Trabajo_Final_L4.Pages
       if (!string.IsNullOrWhiteSpace(id))
       {
         idSoli = Convert.ToInt32(id);
-        soli = dataBase.Solicitud.Where(x => x.id == idSoli).FirstOrDefault();
+        soli = dataBase.Solicitud.Where(x => x.Id == idSoli).FirstOrDefault();
       }
 
       string accion = Request.Params["accion"];
@@ -42,39 +42,46 @@ namespace Trabajo_Final_L4.Pages
         Guardar();
 
       }
+
+      ListaProductor = dataBase.Productor.OrderBy(x => x.Nombre).ToList();
+      ListaAgenteFito = dataBase.AgenteFitosanitario.OrderBy(x => x.Nombre).ToList();
+      ListaCampoFinca = dataBase.CampoFinca.OrderBy(x => x.Calle).ToList();
+
     }
     private void Guardar()
     {
       string fecha = Request.Params["fecha"];
-      string productor = Request.Params["productor"];
-      string campoFinca = Request.Params["campoFinca"];
-      string agenteFitosanitario = Request.Params["agenteFito"];
+      int productor = Convert.ToInt32(Request.Params["selectProductor"]);
+      int campoFinca = Convert.ToInt32(Request.Params["selectCampoF"]);
+      int agenteFitosanitario = Convert.ToInt32(Request.Params["selectAgenteF"]);
       string estado = Request.Params["estado"];
-      Solicitud soliA = new Solicitud();
       
+
 
       if (idSoli == 0)
       {
-
+        Solicitud soliA = new Solicitud();
         // Insertar nuevo ejemplo
-        
-        soliA.fecha = DateTime.Parse(fecha);
-        soliA.Productor.Nombre = productor;
-        soliA.CampoFinca.Calle = campoFinca;
-        soliA.AgenteFitosanitario.Nombre = agenteFitosanitario;
-        soliA.estado = estado;
+        soliA.Fecha = DateTime.Parse(fecha);
+        soliA.IdProductor = productor;
+        soliA.IdCampoFinca = campoFinca;
+        soliA.IdAgenteFitosanitario = agenteFitosanitario;
+        soliA.Estado = estado;
+
         dataBase.Solicitud.Add(soliA);
 
       }
       else
       {
         // Editar ejemplo
-        soliA.fecha = DateTime.Parse(fecha);
-        soliA.Productor.Nombre = productor;
-        soliA.CampoFinca.Calle = campoFinca;
-        soliA.AgenteFitosanitario.Nombre = agenteFitosanitario;
-        soliA.estado = estado;
 
+        Solicitud soliB = dataBase.Solicitud.Where(x => x.Id == idSoli).FirstOrDefault();
+
+        soliB.Fecha = DateTime.Parse(fecha);
+        soliB.IdProductor = productor;
+        soliB.IdCampoFinca = campoFinca;
+        soliB.IdAgenteFitosanitario = agenteFitosanitario;
+        soliB.Estado = estado;
       }
 
 
