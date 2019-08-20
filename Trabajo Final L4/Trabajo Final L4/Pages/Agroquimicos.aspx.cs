@@ -17,16 +17,16 @@ namespace Trabajo_Final_L4.Pages
     {
       FinalEntities database = new FinalEntities();
 
-      ListaAgroquimicos = database.Agroquimico.OrderBy(x => x.MarcaComercial).ToList();
-      
-    }
+      ListaAgroquimicos = database.Agroquimico.OrderBy(x => x.marcaComercial).ToList();
+
+        }
 
     [WebMethod]
     public static string Eliminar(int id)
     {
       FinalEntities database = new FinalEntities();
 
-      Agroquimico agro = database.Agroquimico.Where(x => x.Id == id).FirstOrDefault();
+      Agroquimico agro = database.Agroquimico.Where(x => x.idAgroquimico == id).FirstOrDefault();
 
       database.Agroquimico.Remove(agro);
 

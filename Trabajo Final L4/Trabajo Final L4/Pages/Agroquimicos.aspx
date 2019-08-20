@@ -26,16 +26,16 @@
             <tbody>
                 <%foreach (var item in ListaAgroquimicos) {%>
                     <tr>
-                        <th><%=item.MarcaComercial%></th>
-                        <th><%=item.Codigo%></th>
-                        <th><%=item.PrincipioActivo%></th>
-                        <th><%=item.TipoEnvase%></th>
-                        <th><%=item.CapacidadEnvase%></th>
-                        <th><%=item.UnidadMedida%></th>
+                        <th><%=item.marcaComercial%></th>
+                        <th><%=item.codigo%></th>
+                        <th><%=item.principioActivo%></th>
+                        <th><%=item.tipoEnvase%></th>
+                        <th><%=item.capacidadEnvase%></th>
+                        <th><%=item.unidadMedida%></th>
                         <td>
                             <div class="btn-group" role="group" aria-label="Acciones">
-                              <a href="AgroquimicosABM.aspx?id=<%=item.Id %>" class="btn btn-outline-success" role="button">Editar</a>       
-                              <button type="button" class="btn btn-outline-danger btnDelete" data-id="<%=item.Id %>">Eliminar</button>
+                              <a href="AgroquimicosABM.aspx?id=<%=item.idAgroquimico %>" class="btn btn-outline-success" role="button">Editar</a>       
+                              <button type="button" class="btn btn-outline-danger btnDelete" data-id="<%=item.idAgroquimico %>">Eliminar</button>
                             </div>
                         </td>
                     </tr>

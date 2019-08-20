@@ -21,7 +21,7 @@
 
             <select id="selectProductor" name="selectProductor" class="form-control">
                 <%foreach (var item in ListaProductor) {%>
-                    <option value="<%=item.Id%>" <%if (productor == item.Id) {%> selected <%} %>><%=item.Nombre%></option>
+                    <option value="<%=item.idProductor%>" <%if (productor == item.idProductor) {%> selected <%} %>><%=item.nombre%></option>
                 <%}%>                
             </select>            
         </div>
@@ -30,7 +30,7 @@
             <label for="campoFinca">Campo Finca</label>
             <select id="selectCampoF" name="selectCampoF" class="form-control">
                 <%foreach (var item in ListaCampoFinca) {%>
-                   <option value="<%=item.Id%>" <%if (campoFinca == item.Id) {%> selected <%} %>><%=item.Calle%></option>
+                   <option value="<%=item.idCampoFinca%>" <%if (campoFinca == item.idCampoFinca) {%> selected <%} %>><%=item.calle%></option>
                 <%}%>                
             </select>           
         </div>
@@ -39,7 +39,7 @@
             <label for="agenteFito">Agente Fitosanitario</label>
             <select id="selectAgenteF" name="selectAgenteF" class="form-control">
                 <%foreach (var item in ListaAgenteFito) {%>
-                    <option value="<%=item.Id%>" <%if (agenteFitosanitario == item.Id) {%> selected <%} %>><%=item.Nombre%>
+                    <option value="<%=item.idAgenteFitosanitario%>" <%if (agenteFitosanitario == item.idAgenteFitosanitario) {%> selected <%} %>><%=item.nombre%>
                 <%}%>                
             </select>  
         </div>

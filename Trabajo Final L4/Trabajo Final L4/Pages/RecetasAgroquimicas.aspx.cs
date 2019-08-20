@@ -18,7 +18,7 @@ namespace Trabajo_Final_L4.Pages
 
       FinalEntities database = new FinalEntities();
 
-      ListaRecetasAgro = database.RecetaAgroquimica.OrderBy(x => x.Estado).ToList();
+      ListaRecetasAgro = database.RecetaAgroquimica.OrderBy(x => x.estado).ToList();
 
     }
   }

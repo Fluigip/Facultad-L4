@@ -15,12 +15,12 @@ namespace Trabajo_Final_L4.Pages
     public int idAgro;
 
     FinalEntities dataBase = new FinalEntities();
-    public string marcaComercial { get { return agro == null ? "" : agro.MarcaComercial; } }
-    public string codigo { get { return agro == null ? "" : agro.Codigo; } }
-    public string  principioActivo { get { return agro == null ? "" : agro.PrincipioActivo; } }
-    public string tipoEnvase { get { return agro == null ? "" : agro.TipoEnvase; } }
-    public string capacidadEnvase { get { return agro == null ? "" : agro.CapacidadEnvase.ToString(); } }
-    public string unidadMedida { get { return agro == null ? "" : agro.UnidadMedida; } }
+    public string marcaComercial { get { return agro == null ? "" : agro.marcaComercial; } }
+    public string codigo { get { return agro == null ? "" : agro.codigo; } }
+    public string  principioActivo { get { return agro == null ? "" : agro.principioActivo; } }
+    public string tipoEnvase { get { return agro == null ? "" : agro.tipoEnvase; } }
+    public string capacidadEnvase { get { return agro == null ? "" : agro.capacidadEnvase.ToString(); } }
+    public string unidadMedida { get { return agro == null ? "" : agro.unidadMedida; } }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -28,7 +28,7 @@ namespace Trabajo_Final_L4.Pages
       if (!string.IsNullOrWhiteSpace(id))
       {
         idAgro = Convert.ToInt32(id);
-        agro = dataBase.Agroquimico.Where(x => x.Id == idAgro).FirstOrDefault();
+        agro = dataBase.Agroquimico.Where(x => x.idAgroquimico == idAgro).FirstOrDefault();
       }
 
       string accion = Request.Params["accion"];
@@ -52,12 +52,12 @@ namespace Trabajo_Final_L4.Pages
         
         // Insertar nuevo ejemplo
         Agroquimico agro = new Agroquimico();
-        agro.MarcaComercial = marcaComer;
-        agro.Codigo = codigo;
-        agro.PrincipioActivo = principioA;
-        agro.TipoEnvase = tipoEnvase;
-        agro.CapacidadEnvase = float.Parse(capacidadE);
-        agro.UnidadMedida = uMedida;
+        agro.marcaComercial = marcaComer;
+        agro.codigo = codigo;
+        agro.principioActivo = principioA;
+        agro.tipoEnvase = tipoEnvase;
+        agro.capacidadEnvase = float.Parse(capacidadE);
+        agro.unidadMedida = uMedida;
 
         dataBase.Agroquimico.Add(agro);
 
@@ -66,12 +66,12 @@ namespace Trabajo_Final_L4.Pages
       {
         // Editar ejemplo
 
-        agro.MarcaComercial = marcaComer;
-        agro.Codigo = codigo;
-        agro.PrincipioActivo = principioA;
-        agro.TipoEnvase = tipoEnvase;
-        agro.CapacidadEnvase = float.Parse(capacidadE);
-        agro.UnidadMedida = uMedida;
+        agro.marcaComercial = marcaComer;
+        agro.codigo = codigo;
+        agro.principioActivo = principioA;
+        agro.tipoEnvase = tipoEnvase;
+        agro.capacidadEnvase = float.Parse(capacidadE);
+        agro.unidadMedida = uMedida;
 
       }
 

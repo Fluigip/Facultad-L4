@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Site.Master" AutoEventWireup="true" CodeBehind="RecetasAgroquimicasABM.aspx.cs" Inherits="Trabajo_Final_L4.Pages.RecetasAgroquimicasABM" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../Scripts/RecetaAgroLista.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -9,6 +10,7 @@
     </h1>
 
     <form method="post">
+        <input type="hidden" id="accion" name="accion" value="guardar"/>
         <div class="form-group">
             <label for="fecha">Fecha</label>
             <input type="date" class="form-control" id="fecha" name="fecha" value="<%=fecha%>"/>
@@ -18,7 +20,7 @@
             <label for="agenteFito">Agente Fitosanitario</label>
             <select id="selectAF" name="selectAF" class="form-control">
                 <%foreach (var item in ListaAgenteFito) {%>
-                    <option value="<%=item.Id%>" <%if (agenteFito == item.Id) {%> selected <%} %>><%=item.Nombre%></option>
+                    <option value="<%=item.idAgenteFitosanitario%>" <%if (agenteFito == item.idAgenteFitosanitario) {%> selected <%} %>><%=item.nombre%></option>
                 <%}%>                
             </select>  
         </div>
@@ -28,7 +30,7 @@
 
             <select id="selectProduc" name="selectProduc" class="form-control">
                 <%foreach (var item in ListaProductor) {%>
-                    <option value="<%=item.Id%>" <%if (productor == item.Id) {%> selected <%} %>><%=item.Nombre%></option>
+                    <option value="<%=item.idProductor%>" <%if (productor == item.idProductor) {%> selected <%} %>><%=item.nombre%></option>
                 <%}%>                
             </select>            
         </div>
@@ -37,7 +39,7 @@
             <label for="campoFinca">Campo Finca</label>
             <select id="selectCF" name="selectCF" class="form-control">
                 <%foreach (var item in ListaCampoFinca) {%>
-                   <option value="<%=item.Id%>" <%if (campoFinca == item.Id) {%> selected <%} %>><%=item.Calle%></option>
+                   <option value="<%=item.idCampoFinca%>" <%if (campoFinca == item.idCampoFinca) {%> selected <%} %>><%=item.calle%></option>
                 <%}%>                
             </select>           
         </div>
@@ -56,6 +58,7 @@
             Agregar Agroquimico
         </button>
 
+        <%-- Modal de Producto --%>
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -68,8 +71,8 @@
                     <div class="modal-body">
                        <div>
                            <select id="selectD" name="selectD" class="form-control">   
-                               <%foreach (var item in ListaDetalleReceta){%>
-                                   <option value="<%=item.Id%>"<%if(marcaC == item.IdAgroquimico.ToString()){%> selected <%}%>></option>
+                               <%foreach (var item in ListaAgro){%>
+                                   <option value="<%=item.idAgroquimico%>"<%if(marcaC == item.idAgroquimico.ToString()){%> selected <%}%>><%=item.marcaComercial%></option>
                                <%}%>                              
                            </select>
                            <br />
@@ -89,11 +92,28 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button id="guardarProducto" type="button" class="btn btn-success">Guardar</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <br />
+        <br />
+            
+        <%-- Tabla para productos --%>
+        <table id="tableRecetasAgroProductos" style="width: 100%">
+            <thead>
+                <tr>                   
+                    <th>Marca Comercial</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
 
         <div class="text-center">
             <a class="btn btn-outline-danger" href="RecetasAgroquimicas.aspx" role="button">Cancelar</a>

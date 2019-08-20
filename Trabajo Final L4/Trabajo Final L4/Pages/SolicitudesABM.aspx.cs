@@ -21,11 +21,11 @@ namespace Trabajo_Final_L4.Pages
 
     FinalEntities dataBase = new FinalEntities();
 
-    public string fecha { get { return soli == null ? "" : soli.Fecha.ToString("yyyy-MM-dd"); } }
-    public int productor { get { return soli == null ? -1 : soli.IdProductor; } }
-    public int campoFinca { get { return soli == null ? -1 : soli.IdCampoFinca; } }
-    public int agenteFitosanitario { get { return soli == null ? -1 : soli.IdAgenteFitosanitario; } }
-    public string estado { get { return soli == null ? "" : soli.Estado; } }
+    public string fecha { get { return soli == null ? "" : soli.fecha.ToString("yyyy-MM-dd"); } }
+    public int productor { get { return soli == null ? -1 : soli.idProductor; } }
+    public int campoFinca { get { return soli == null ? -1 : soli.idCampoFinca; } }
+    public int agenteFitosanitario { get { return soli == null ? -1 : soli.idAgenteFitosanitario; } }
+    public string estado { get { return soli == null ? "" : soli.estado; } }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -33,7 +33,7 @@ namespace Trabajo_Final_L4.Pages
       if (!string.IsNullOrWhiteSpace(id))
       {
         idSoli = Convert.ToInt32(id);
-        soli = dataBase.Solicitud.Where(x => x.Id == idSoli).FirstOrDefault();
+        soli = dataBase.Solicitud.Where(x => x.idSolicitud == idSoli).FirstOrDefault();
       }
 
       string accion = Request.Params["accion"];
@@ -43,9 +43,9 @@ namespace Trabajo_Final_L4.Pages
 
       }
 
-      ListaProductor = dataBase.Productor.OrderBy(x => x.Nombre).ToList();
-      ListaAgenteFito = dataBase.AgenteFitosanitario.OrderBy(x => x.Nombre).ToList();
-      ListaCampoFinca = dataBase.CampoFinca.OrderBy(x => x.Calle).ToList();
+      ListaProductor = dataBase.Productor.OrderBy(x => x.nombre).ToList();
+      ListaAgenteFito = dataBase.AgenteFitosanitario.OrderBy(x => x.nombre).ToList();
+      ListaCampoFinca = dataBase.CampoFinca.OrderBy(x => x.calle).ToList();
 
     }
     private void Guardar()
@@ -62,11 +62,11 @@ namespace Trabajo_Final_L4.Pages
       {
         Solicitud soliA = new Solicitud();
         // Insertar nuevo ejemplo
-        soliA.Fecha = DateTime.Parse(fecha);
-        soliA.IdProductor = productor;
-        soliA.IdCampoFinca = campoFinca;
-        soliA.IdAgenteFitosanitario = agenteFitosanitario;
-        soliA.Estado = estado;
+        soliA.fecha = DateTime.Parse(fecha);
+        soliA.idProductor = productor;
+        soliA.idCampoFinca = campoFinca;
+        soliA.idAgenteFitosanitario = agenteFitosanitario;
+        soliA.estado = estado;
 
         dataBase.Solicitud.Add(soliA);
 
@@ -75,13 +75,13 @@ namespace Trabajo_Final_L4.Pages
       {
         // Editar ejemplo
 
-        Solicitud soliB = dataBase.Solicitud.Where(x => x.Id == idSoli).FirstOrDefault();
+        Solicitud soliB = dataBase.Solicitud.Where(x => x.idSolicitud == idSoli).FirstOrDefault();
 
-        soliB.Fecha = DateTime.Parse(fecha);
-        soliB.IdProductor = productor;
-        soliB.IdCampoFinca = campoFinca;
-        soliB.IdAgenteFitosanitario = agenteFitosanitario;
-        soliB.Estado = estado;
+        soliB.fecha = DateTime.Parse(fecha);
+        soliB.idProductor = productor;
+        soliB.idCampoFinca = campoFinca;
+        soliB.idAgenteFitosanitario = agenteFitosanitario;
+        soliB.estado = estado;
       }
 
 

@@ -24,22 +24,22 @@
             <tbody>
                 <%foreach (var item in ListaRecetasAgro) {%>
                     <tr>
-                        <th><%=item.FechaReceta%></th>
-                        <th><%=item.AgenteFitosanitario.Nombre%></th>
-                        <th><%=item.Productor.Nombre%></th>
-                        <th><%=item.CampoFinca.Calle%></th>
-                        <th><%=item.Diagnostico%></th>
-                        <th><%=item.Estado%></th>
-                        <th><%=item.Vendedor.Cuit%></th>                       
+                        <th><%=item.fechaReceta%></th>
+                        <th><%=item.AgenteFitosanitario.nombre%></th>
+                        <th><%=item.Productor.nombre%></th>
+                        <th><%=item.CampoFinca.calle%></th>
+                        <th><%=item.diagnostico%></th>
+                        <th><%=item.estado%></th>
+                        <th><%=item.Vendedor.cuit%></th>    
                         <td>
                             <div class="btn-group" role="group" aria-label="Acciones">
-                              <a href="RecetasAgroquimicasABM.aspx" class="btn btn-outline-success" role="button">Editar</a>       
-                              <button type="button" class="btn btn-outline-danger btnDelete" data-id="<%=item.Id %>">Eliminar</button>
+                              <a href="RecetasAgroquimicasABM.aspx" class="btn btn-outline-success" role="button">Editar</a>
+                              <button type="button" class="btn btn-outline-danger btnDelete" data-id="<%=item.idAgenteFitosanitario %>">Eliminar</button>
                             </div>
                         </td>
                     </tr>
                 <%}%>
-            </tbody>            
-        </table>    
+            </tbody>
+        </table>
     </div>
 </asp:Content>

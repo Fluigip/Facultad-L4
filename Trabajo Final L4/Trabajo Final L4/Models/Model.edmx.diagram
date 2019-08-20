@@ -5,18 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4e110d0319cc434c8131c4ab3312ee3a" Name="Diagram1" ZoomLevel="92">
-        <EntityTypeShape EntityType="FinalModel.Accion" Width="1.5" PointX="5.75" PointY="9.5" />
-        <EntityTypeShape EntityType="FinalModel.AgenteFitosanitario" Width="1.5" PointX="3" PointY="9.25" />
-        <EntityTypeShape EntityType="FinalModel.Agroquimico" Width="1.5" PointX="8.25" PointY="0.75" />
-        <EntityTypeShape EntityType="FinalModel.CampoFinca" Width="1.5" PointX="3" PointY="4.5" />
-        <EntityTypeShape EntityType="FinalModel.Perfil" Width="1.5" PointX="5.75" PointY="12.5" />
-        <EntityTypeShape EntityType="FinalModel.PerfilAccion" Width="1.5" PointX="8" PointY="9.125" />
+        <EntityTypeShape EntityType="FinalModel.Accion" Width="1.5" PointX="5.75" PointY="14" />
+        <EntityTypeShape EntityType="FinalModel.AgenteFitosanitario" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="FinalModel.Agroquimico" Width="1.5" PointX="8.25" PointY="0.875" />
+        <EntityTypeShape EntityType="FinalModel.CampoFinca" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="FinalModel.Perfil" Width="1.5" PointX="5.75" PointY="10.875" />
+        <EntityTypeShape EntityType="FinalModel.PerfilAccion" Width="1.5" PointX="8" PointY="10.75" />
         <EntityTypeShape EntityType="FinalModel.Productor" Width="1.5" PointX="0.75" PointY="4.875" />
-        <EntityTypeShape EntityType="FinalModel.RecetaAgroquimica" Width="1.5" PointX="5.25" PointY="4.125" />
+        <EntityTypeShape EntityType="FinalModel.RecetaAgroquimica" Width="1.5" PointX="5.25" PointY="4.25" />
         <EntityTypeShape EntityType="FinalModel.RecetaAgroquimicaDetalle" Width="1.5" PointX="10.5" PointY="5" />
-        <EntityTypeShape EntityType="FinalModel.Solicitud" Width="1.5" PointX="8.25" PointY="4.625" />
-        <EntityTypeShape EntityType="FinalModel.Usuario" Width="1.5" PointX="10.75" PointY="2" />
-        <EntityTypeShape EntityType="FinalModel.Vendedor" Width="1.5" PointX="3" PointY="1.625" />
+        <EntityTypeShape EntityType="FinalModel.Solicitud" Width="1.5" PointX="8.25" PointY="4.75" />
+        <EntityTypeShape EntityType="FinalModel.Usuario" Width="1.5" PointX="5.75" PointY="16.75" />
+        <EntityTypeShape EntityType="FinalModel.UsuarioPerfil" Width="1.5" PointX="8" PointY="13.75" />
+        <EntityTypeShape EntityType="FinalModel.Vendedor" Width="1.5" PointX="3" PointY="8.625" />
         <AssociationConnector Association="FinalModel.FK_PerfilAccion_Accion" />
         <AssociationConnector Association="FinalModel.FK_RecetaAgroquimica_AgenteFitosanitario" />
         <AssociationConnector Association="FinalModel.FK_Solicitud_AgenteFitosanitario" />
@@ -24,11 +25,13 @@
         <AssociationConnector Association="FinalModel.FK_CampoFinca_Productor" />
         <AssociationConnector Association="FinalModel.FK_RecetaAgroquimica_CampoFinca" />
         <AssociationConnector Association="FinalModel.FK_Solicitud_CampoFinca" />
-        <AssociationConnector Association="FinalModel.FK_PerfilAccion_Perfil" />
+        <AssociationConnector Association="FinalModel.FK_PerfilAccion_PerfilAccion" />
+        <AssociationConnector Association="FinalModel.FK_UsuarioPerfil_Perfil" />
         <AssociationConnector Association="FinalModel.FK_RecetaAgroquimica_Productor" />
         <AssociationConnector Association="FinalModel.FK_Solicitud_Productor" />
         <AssociationConnector Association="FinalModel.FK_RecetaAgroquimica_Vendedor" />
         <AssociationConnector Association="FinalModel.FK_RecetaAgroquimicaDetalle_RecetaAgroquimica" />
+        <AssociationConnector Association="FinalModel.FK_UsuarioPerfil_Usuario" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

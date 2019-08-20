@@ -12,14 +12,13 @@ namespace Trabajo_Final_L4.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RecetaAgroquimicaDetalle
+    public partial class UsuarioPerfil
     {
-        public int idRecetaAgroquimicaDetalle { get; set; }
-        public int cantidad { get; set; }
-        public int idRecetaAgroquimica { get; set; }
-        public int idAgroquimico { get; set; }
+        public int idUsuarioPerfil { get; set; }
+        public int idUsuario { get; set; }
+        public int idPerfil { get; set; }
     
-        public virtual Agroquimico Agroquimico { get; set; }
-        public virtual RecetaAgroquimica RecetaAgroquimica { get; set; }
+        public virtual Perfil Perfil { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

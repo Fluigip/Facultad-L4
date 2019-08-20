@@ -7,130 +7,136 @@
     <Schema Namespace="FinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accion">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idAccion" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idAccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="AgenteFitosanitario">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idAgenteFitosanitario" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Matricula" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idAgenteFitosanitario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="matricula" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Agroquimico">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idAgroquimico" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MarcaComercial" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PrincipioActivo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TipoEnvase" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CapacidadEnvase" Type="float" />
-          <Property Name="UnidadMedida" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idAgroquimico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marcaComercial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="principioActivo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipoEnvase" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="capacidadEnvase" Type="float" Nullable="false" />
+          <Property Name="unidadMedida" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CampoFinca">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idCampoFinca" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Calle" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Numero" Type="int" Nullable="false" />
-          <Property Name="Localidad" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Latitud" Type="float" />
-          <Property Name="Longitud" Type="float" />
-          <Property Name="IdProductor" Type="int" Nullable="false" />
+          <Property Name="idCampoFinca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="calle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="localidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="latitud" Type="float" Nullable="false" />
+          <Property Name="longitud" Type="float" Nullable="false" />
+          <Property Name="idProductor" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Perfil">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idPerfil" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="PerfilAccion">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idPerfilAccion" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdPerfil" Type="int" Nullable="false" />
-          <Property Name="IdAccion" Type="int" Nullable="false" />
+          <Property Name="idPerfilAccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPerfil" Type="int" Nullable="false" />
+          <Property Name="idAccion" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Productor">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idProductor" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Cuit" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idProductor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cuit" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="RecetaAgroquimica">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idRecetaAgroquimica" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="FechaReceta" Type="datetime" Nullable="false" />
-          <Property Name="Diagnostico" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Entregado" Type="bit" />
-          <Property Name="IdCampoFinca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdProductor" Type="int" Nullable="false" />
-          <Property Name="IdAgenteFitosanitario" Type="int" Nullable="false" />
-          <Property Name="IdVendedor" Type="int" Nullable="false" />
+          <Property Name="idRecetaAgroquimica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fechaReceta" Type="date" Nullable="false" />
+          <Property Name="diagnostico" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="entregado" Type="bit" Nullable="false" />
+          <Property Name="idCampoFinca" Type="int" Nullable="false" />
+          <Property Name="idProductor" Type="int" Nullable="false" />
+          <Property Name="idAgenteFitosanitario" Type="int" Nullable="false" />
+          <Property Name="idVendedor" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="RecetaAgroquimicaDetalle">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idRecetaAgroquimicaDetalle" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Cantidad" Type="int" Nullable="false" />
-          <Property Name="IdRecetaAgroquimica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdAgroquimico" Type="int" Nullable="false" />
+          <Property Name="idRecetaAgroquimicaDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="idRecetaAgroquimica" Type="int" Nullable="false" />
+          <Property Name="idAgroquimico" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Solicitud">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idSolicitud" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fecha" Type="datetime" Nullable="false" />
-          <Property Name="IdProductor" Type="int" Nullable="false" />
-          <Property Name="IdCampoFinca" Type="int" Nullable="false" />
-          <Property Name="IdAgenteFitosanitario" Type="int" Nullable="false" />
-          <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="idProductor" Type="int" Nullable="false" />
+          <Property Name="idCampoFinca" Type="int" Nullable="false" />
+          <Property Name="idAgenteFitosanitario" Type="int" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idUsuario" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioPerfil">
+          <Key>
+            <PropertyRef Name="idUsuarioPerfil" />
+          </Key>
+          <Property Name="idUsuarioPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idPerfil" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Vendedor">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idVendedor" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Cuit" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="RazonSocial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idVendedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cuit" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="razonSocial" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_CampoFinca_Productor">
           <End Role="Productor" Type="Self.Productor" Multiplicity="1" />
           <End Role="CampoFinca" Type="Self.CampoFinca" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Productor">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idProductor" />
             </Principal>
             <Dependent Role="CampoFinca">
-              <PropertyRef Name="IdProductor" />
+              <PropertyRef Name="idProductor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -139,22 +145,22 @@
           <End Role="PerfilAccion" Type="Self.PerfilAccion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accion">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idAccion" />
             </Principal>
             <Dependent Role="PerfilAccion">
-              <PropertyRef Name="IdAccion" />
+              <PropertyRef Name="idAccion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PerfilAccion_Perfil">
+        <Association Name="FK_PerfilAccion_PerfilAccion">
           <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
           <End Role="PerfilAccion" Type="Self.PerfilAccion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Perfil">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idPerfil" />
             </Principal>
             <Dependent Role="PerfilAccion">
-              <PropertyRef Name="IdPerfil" />
+              <PropertyRef Name="idPerfil" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -163,10 +169,10 @@
           <End Role="RecetaAgroquimica" Type="Self.RecetaAgroquimica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AgenteFitosanitario">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idAgenteFitosanitario" />
             </Principal>
             <Dependent Role="RecetaAgroquimica">
-              <PropertyRef Name="IdAgenteFitosanitario" />
+              <PropertyRef Name="idAgenteFitosanitario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -175,10 +181,10 @@
           <End Role="RecetaAgroquimica" Type="Self.RecetaAgroquimica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CampoFinca">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idCampoFinca" />
             </Principal>
             <Dependent Role="RecetaAgroquimica">
-              <PropertyRef Name="IdCampoFinca" />
+              <PropertyRef Name="idCampoFinca" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -187,10 +193,10 @@
           <End Role="RecetaAgroquimica" Type="Self.RecetaAgroquimica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Productor">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idProductor" />
             </Principal>
             <Dependent Role="RecetaAgroquimica">
-              <PropertyRef Name="IdProductor" />
+              <PropertyRef Name="idProductor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -199,10 +205,10 @@
           <End Role="RecetaAgroquimica" Type="Self.RecetaAgroquimica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Vendedor">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idVendedor" />
             </Principal>
             <Dependent Role="RecetaAgroquimica">
-              <PropertyRef Name="IdVendedor" />
+              <PropertyRef Name="idVendedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -211,10 +217,10 @@
           <End Role="RecetaAgroquimicaDetalle" Type="Self.RecetaAgroquimicaDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Agroquimico">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idAgroquimico" />
             </Principal>
             <Dependent Role="RecetaAgroquimicaDetalle">
-              <PropertyRef Name="IdAgroquimico" />
+              <PropertyRef Name="idAgroquimico" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -223,10 +229,10 @@
           <End Role="RecetaAgroquimicaDetalle" Type="Self.RecetaAgroquimicaDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RecetaAgroquimica">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idRecetaAgroquimica" />
             </Principal>
             <Dependent Role="RecetaAgroquimicaDetalle">
-              <PropertyRef Name="IdRecetaAgroquimica" />
+              <PropertyRef Name="idRecetaAgroquimica" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -235,10 +241,10 @@
           <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AgenteFitosanitario">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idAgenteFitosanitario" />
             </Principal>
             <Dependent Role="Solicitud">
-              <PropertyRef Name="IdAgenteFitosanitario" />
+              <PropertyRef Name="idAgenteFitosanitario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -247,10 +253,10 @@
           <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CampoFinca">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idCampoFinca" />
             </Principal>
             <Dependent Role="Solicitud">
-              <PropertyRef Name="IdCampoFinca" />
+              <PropertyRef Name="idCampoFinca" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -259,10 +265,34 @@
           <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Productor">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idProductor" />
             </Principal>
             <Dependent Role="Solicitud">
-              <PropertyRef Name="IdProductor" />
+              <PropertyRef Name="idProductor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioPerfil_Perfil">
+          <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+          <End Role="UsuarioPerfil" Type="Self.UsuarioPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="idPerfil" />
+            </Principal>
+            <Dependent Role="UsuarioPerfil">
+              <PropertyRef Name="idPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioPerfil_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="UsuarioPerfil" Type="Self.UsuarioPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioPerfil">
+              <PropertyRef Name="idUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -278,6 +308,7 @@
           <EntitySet Name="RecetaAgroquimicaDetalle" EntityType="Self.RecetaAgroquimicaDetalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Solicitud" EntityType="Self.Solicitud" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioPerfil" EntityType="Self.UsuarioPerfil" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vendedor" EntityType="Self.Vendedor" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CampoFinca_Productor" Association="Self.FK_CampoFinca_Productor">
             <End Role="Productor" EntitySet="Productor" />
@@ -287,7 +318,7 @@
             <End Role="Accion" EntitySet="Accion" />
             <End Role="PerfilAccion" EntitySet="PerfilAccion" />
           </AssociationSet>
-          <AssociationSet Name="FK_PerfilAccion_Perfil" Association="Self.FK_PerfilAccion_Perfil">
+          <AssociationSet Name="FK_PerfilAccion_PerfilAccion" Association="Self.FK_PerfilAccion_PerfilAccion">
             <End Role="Perfil" EntitySet="Perfil" />
             <End Role="PerfilAccion" EntitySet="PerfilAccion" />
           </AssociationSet>
@@ -327,6 +358,14 @@
             <End Role="Productor" EntitySet="Productor" />
             <End Role="Solicitud" EntitySet="Solicitud" />
           </AssociationSet>
+          <AssociationSet Name="FK_UsuarioPerfil_Perfil" Association="Self.FK_UsuarioPerfil_Perfil">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="UsuarioPerfil" EntitySet="UsuarioPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioPerfil_Usuario" Association="Self.FK_UsuarioPerfil_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioPerfil" EntitySet="UsuarioPerfil" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -344,6 +383,7 @@
           <EntitySet Name="RecetaAgroquimicaDetalle" EntityType="FinalModel.RecetaAgroquimicaDetalle" />
           <EntitySet Name="Solicitud" EntityType="FinalModel.Solicitud" />
           <EntitySet Name="Usuario" EntityType="FinalModel.Usuario" />
+          <EntitySet Name="UsuarioPerfil" EntityType="FinalModel.UsuarioPerfil" />
           <EntitySet Name="Vendedor" EntityType="FinalModel.Vendedor" />
           <AssociationSet Name="FK_PerfilAccion_Accion" Association="FinalModel.FK_PerfilAccion_Accion">
             <End Role="Accion" EntitySet="Accion" />
@@ -373,9 +413,13 @@
             <End Role="CampoFinca" EntitySet="CampoFinca" />
             <End Role="Solicitud" EntitySet="Solicitud" />
           </AssociationSet>
-          <AssociationSet Name="FK_PerfilAccion_Perfil" Association="FinalModel.FK_PerfilAccion_Perfil">
+          <AssociationSet Name="FK_PerfilAccion_PerfilAccion" Association="FinalModel.FK_PerfilAccion_PerfilAccion">
             <End Role="Perfil" EntitySet="Perfil" />
             <End Role="PerfilAccion" EntitySet="PerfilAccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioPerfil_Perfil" Association="FinalModel.FK_UsuarioPerfil_Perfil">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="UsuarioPerfil" EntitySet="UsuarioPerfil" />
           </AssociationSet>
           <AssociationSet Name="FK_RecetaAgroquimica_Productor" Association="FinalModel.FK_RecetaAgroquimica_Productor">
             <End Role="Productor" EntitySet="Productor" />
@@ -393,98 +437,102 @@
             <End Role="RecetaAgroquimica" EntitySet="RecetaAgroquimica" />
             <End Role="RecetaAgroquimicaDetalle" EntitySet="RecetaAgroquimicaDetalle" />
           </AssociationSet>
+          <AssociationSet Name="FK_UsuarioPerfil_Usuario" Association="FinalModel.FK_UsuarioPerfil_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioPerfil" EntitySet="UsuarioPerfil" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Accion">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idAccion" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idAccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="PerfilAccion" Relationship="FinalModel.FK_PerfilAccion_Accion" FromRole="Accion" ToRole="PerfilAccion" />
         </EntityType>
         <EntityType Name="AgenteFitosanitario">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idAgenteFitosanitario" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Matricula" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idAgenteFitosanitario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="matricula" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RecetaAgroquimica" Relationship="FinalModel.FK_RecetaAgroquimica_AgenteFitosanitario" FromRole="AgenteFitosanitario" ToRole="RecetaAgroquimica" />
           <NavigationProperty Name="Solicitud" Relationship="FinalModel.FK_Solicitud_AgenteFitosanitario" FromRole="AgenteFitosanitario" ToRole="Solicitud" />
         </EntityType>
         <EntityType Name="Agroquimico">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idAgroquimico" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MarcaComercial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PrincipioActivo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TipoEnvase" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CapacidadEnvase" Type="Double" />
-          <Property Name="UnidadMedida" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idAgroquimico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="marcaComercial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="principioActivo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipoEnvase" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="capacidadEnvase" Type="Double" Nullable="false" />
+          <Property Name="unidadMedida" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RecetaAgroquimicaDetalle" Relationship="FinalModel.FK_RecetaAgroquimicaDetalle_Agroquimico" FromRole="Agroquimico" ToRole="RecetaAgroquimicaDetalle" />
         </EntityType>
         <EntityType Name="CampoFinca">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idCampoFinca" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Calle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Numero" Type="Int32" Nullable="false" />
-          <Property Name="Localidad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Latitud" Type="Double" />
-          <Property Name="Longitud" Type="Double" />
-          <Property Name="IdProductor" Type="Int32" Nullable="false" />
+          <Property Name="idCampoFinca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="calle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="localidad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="latitud" Type="Double" Nullable="false" />
+          <Property Name="longitud" Type="Double" Nullable="false" />
+          <Property Name="idProductor" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Productor" Relationship="FinalModel.FK_CampoFinca_Productor" FromRole="CampoFinca" ToRole="Productor" />
           <NavigationProperty Name="RecetaAgroquimica" Relationship="FinalModel.FK_RecetaAgroquimica_CampoFinca" FromRole="CampoFinca" ToRole="RecetaAgroquimica" />
           <NavigationProperty Name="Solicitud" Relationship="FinalModel.FK_Solicitud_CampoFinca" FromRole="CampoFinca" ToRole="Solicitud" />
         </EntityType>
         <EntityType Name="Perfil">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idPerfil" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="PerfilAccion" Relationship="FinalModel.FK_PerfilAccion_Perfil" FromRole="Perfil" ToRole="PerfilAccion" />
+          <Property Name="idPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PerfilAccion" Relationship="FinalModel.FK_PerfilAccion_PerfilAccion" FromRole="Perfil" ToRole="PerfilAccion" />
+          <NavigationProperty Name="UsuarioPerfil" Relationship="FinalModel.FK_UsuarioPerfil_Perfil" FromRole="Perfil" ToRole="UsuarioPerfil" />
         </EntityType>
         <EntityType Name="PerfilAccion">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idPerfilAccion" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdPerfil" Type="Int32" Nullable="false" />
-          <Property Name="IdAccion" Type="Int32" Nullable="false" />
+          <Property Name="idPerfilAccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPerfil" Type="Int32" Nullable="false" />
+          <Property Name="idAccion" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Accion" Relationship="FinalModel.FK_PerfilAccion_Accion" FromRole="PerfilAccion" ToRole="Accion" />
-          <NavigationProperty Name="Perfil" Relationship="FinalModel.FK_PerfilAccion_Perfil" FromRole="PerfilAccion" ToRole="Perfil" />
+          <NavigationProperty Name="Perfil" Relationship="FinalModel.FK_PerfilAccion_PerfilAccion" FromRole="PerfilAccion" ToRole="Perfil" />
         </EntityType>
         <EntityType Name="Productor">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idProductor" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Cuit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idProductor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cuit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CampoFinca" Relationship="FinalModel.FK_CampoFinca_Productor" FromRole="Productor" ToRole="CampoFinca" />
           <NavigationProperty Name="RecetaAgroquimica" Relationship="FinalModel.FK_RecetaAgroquimica_Productor" FromRole="Productor" ToRole="RecetaAgroquimica" />
           <NavigationProperty Name="Solicitud" Relationship="FinalModel.FK_Solicitud_Productor" FromRole="Productor" ToRole="Solicitud" />
         </EntityType>
         <EntityType Name="RecetaAgroquimica">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idRecetaAgroquimica" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="FechaReceta" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Diagnostico" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Entregado" Type="Boolean" />
-          <Property Name="IdCampoFinca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdProductor" Type="Int32" Nullable="false" />
-          <Property Name="IdAgenteFitosanitario" Type="Int32" Nullable="false" />
-          <Property Name="IdVendedor" Type="Int32" Nullable="false" />
+          <Property Name="idRecetaAgroquimica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fechaReceta" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="diagnostico" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="entregado" Type="Boolean" Nullable="false" />
+          <Property Name="idCampoFinca" Type="Int32" Nullable="false" />
+          <Property Name="idProductor" Type="Int32" Nullable="false" />
+          <Property Name="idAgenteFitosanitario" Type="Int32" Nullable="false" />
+          <Property Name="idVendedor" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AgenteFitosanitario" Relationship="FinalModel.FK_RecetaAgroquimica_AgenteFitosanitario" FromRole="RecetaAgroquimica" ToRole="AgenteFitosanitario" />
           <NavigationProperty Name="CampoFinca" Relationship="FinalModel.FK_RecetaAgroquimica_CampoFinca" FromRole="RecetaAgroquimica" ToRole="CampoFinca" />
           <NavigationProperty Name="Productor" Relationship="FinalModel.FK_RecetaAgroquimica_Productor" FromRole="RecetaAgroquimica" ToRole="Productor" />
@@ -493,46 +541,56 @@
         </EntityType>
         <EntityType Name="RecetaAgroquimicaDetalle">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idRecetaAgroquimicaDetalle" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Cantidad" Type="Int32" Nullable="false" />
-          <Property Name="IdRecetaAgroquimica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdAgroquimico" Type="Int32" Nullable="false" />
+          <Property Name="idRecetaAgroquimicaDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="idRecetaAgroquimica" Type="Int32" Nullable="false" />
+          <Property Name="idAgroquimico" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Agroquimico" Relationship="FinalModel.FK_RecetaAgroquimicaDetalle_Agroquimico" FromRole="RecetaAgroquimicaDetalle" ToRole="Agroquimico" />
           <NavigationProperty Name="RecetaAgroquimica" Relationship="FinalModel.FK_RecetaAgroquimicaDetalle_RecetaAgroquimica" FromRole="RecetaAgroquimicaDetalle" ToRole="RecetaAgroquimica" />
         </EntityType>
         <EntityType Name="Solicitud">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idSolicitud" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="IdProductor" Type="Int32" Nullable="false" />
-          <Property Name="IdCampoFinca" Type="Int32" Nullable="false" />
-          <Property Name="IdAgenteFitosanitario" Type="Int32" Nullable="false" />
-          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idSolicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="idProductor" Type="Int32" Nullable="false" />
+          <Property Name="idCampoFinca" Type="Int32" Nullable="false" />
+          <Property Name="idAgenteFitosanitario" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="AgenteFitosanitario" Relationship="FinalModel.FK_Solicitud_AgenteFitosanitario" FromRole="Solicitud" ToRole="AgenteFitosanitario" />
           <NavigationProperty Name="CampoFinca" Relationship="FinalModel.FK_Solicitud_CampoFinca" FromRole="Solicitud" ToRole="CampoFinca" />
           <NavigationProperty Name="Productor" Relationship="FinalModel.FK_Solicitud_Productor" FromRole="Solicitud" ToRole="Productor" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idUsuario" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UsuarioPerfil" Relationship="FinalModel.FK_UsuarioPerfil_Usuario" FromRole="Usuario" ToRole="UsuarioPerfil" />
+        </EntityType>
+        <EntityType Name="UsuarioPerfil">
+          <Key>
+            <PropertyRef Name="idUsuarioPerfil" />
+          </Key>
+          <Property Name="idUsuarioPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idPerfil" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Perfil" Relationship="FinalModel.FK_UsuarioPerfil_Perfil" FromRole="UsuarioPerfil" ToRole="Perfil" />
+          <NavigationProperty Name="Usuario" Relationship="FinalModel.FK_UsuarioPerfil_Usuario" FromRole="UsuarioPerfil" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Vendedor">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="idVendedor" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Cuit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="RazonSocial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idVendedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cuit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="razonSocial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RecetaAgroquimica" Relationship="FinalModel.FK_RecetaAgroquimica_Vendedor" FromRole="Vendedor" ToRole="RecetaAgroquimica" />
         </EntityType>
         <Association Name="FK_PerfilAccion_Accion">
@@ -540,10 +598,10 @@
           <End Type="FinalModel.PerfilAccion" Role="PerfilAccion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accion">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idAccion" />
             </Principal>
             <Dependent Role="PerfilAccion">
-              <PropertyRef Name="IdAccion" />
+              <PropertyRef Name="idAccion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -552,10 +610,10 @@
           <End Type="FinalModel.RecetaAgroquimica" Role="RecetaAgroquimica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AgenteFitosanitario">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idAgenteFitosanitario" />
             </Principal>
             <Dependent Role="RecetaAgroquimica">
-              <PropertyRef Name="IdAgenteFitosanitario" />
+              <PropertyRef Name="idAgenteFitosanitario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -564,10 +622,10 @@
           <End Type="FinalModel.Solicitud" Role="Solicitud" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AgenteFitosanitario">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idAgenteFitosanitario" />
             </Principal>
             <Dependent Role="Solicitud">
-              <PropertyRef Name="IdAgenteFitosanitario" />
+              <PropertyRef Name="idAgenteFitosanitario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -576,10 +634,10 @@
           <End Type="FinalModel.RecetaAgroquimicaDetalle" Role="RecetaAgroquimicaDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Agroquimico">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idAgroquimico" />
             </Principal>
             <Dependent Role="RecetaAgroquimicaDetalle">
-              <PropertyRef Name="IdAgroquimico" />
+              <PropertyRef Name="idAgroquimico" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -588,10 +646,10 @@
           <End Type="FinalModel.CampoFinca" Role="CampoFinca" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Productor">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idProductor" />
             </Principal>
             <Dependent Role="CampoFinca">
-              <PropertyRef Name="IdProductor" />
+              <PropertyRef Name="idProductor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -600,10 +658,10 @@
           <End Type="FinalModel.RecetaAgroquimica" Role="RecetaAgroquimica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CampoFinca">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idCampoFinca" />
             </Principal>
             <Dependent Role="RecetaAgroquimica">
-              <PropertyRef Name="IdCampoFinca" />
+              <PropertyRef Name="idCampoFinca" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -612,22 +670,34 @@
           <End Type="FinalModel.Solicitud" Role="Solicitud" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CampoFinca">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idCampoFinca" />
             </Principal>
             <Dependent Role="Solicitud">
-              <PropertyRef Name="IdCampoFinca" />
+              <PropertyRef Name="idCampoFinca" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PerfilAccion_Perfil">
+        <Association Name="FK_PerfilAccion_PerfilAccion">
           <End Type="FinalModel.Perfil" Role="Perfil" Multiplicity="1" />
           <End Type="FinalModel.PerfilAccion" Role="PerfilAccion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Perfil">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idPerfil" />
             </Principal>
             <Dependent Role="PerfilAccion">
-              <PropertyRef Name="IdPerfil" />
+              <PropertyRef Name="idPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioPerfil_Perfil">
+          <End Type="FinalModel.Perfil" Role="Perfil" Multiplicity="1" />
+          <End Type="FinalModel.UsuarioPerfil" Role="UsuarioPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="idPerfil" />
+            </Principal>
+            <Dependent Role="UsuarioPerfil">
+              <PropertyRef Name="idPerfil" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -636,10 +706,10 @@
           <End Type="FinalModel.RecetaAgroquimica" Role="RecetaAgroquimica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Productor">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idProductor" />
             </Principal>
             <Dependent Role="RecetaAgroquimica">
-              <PropertyRef Name="IdProductor" />
+              <PropertyRef Name="idProductor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -648,10 +718,10 @@
           <End Type="FinalModel.Solicitud" Role="Solicitud" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Productor">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idProductor" />
             </Principal>
             <Dependent Role="Solicitud">
-              <PropertyRef Name="IdProductor" />
+              <PropertyRef Name="idProductor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -660,10 +730,10 @@
           <End Type="FinalModel.RecetaAgroquimica" Role="RecetaAgroquimica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Vendedor">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idVendedor" />
             </Principal>
             <Dependent Role="RecetaAgroquimica">
-              <PropertyRef Name="IdVendedor" />
+              <PropertyRef Name="idVendedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -672,10 +742,22 @@
           <End Type="FinalModel.RecetaAgroquimicaDetalle" Role="RecetaAgroquimicaDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RecetaAgroquimica">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="idRecetaAgroquimica" />
             </Principal>
             <Dependent Role="RecetaAgroquimicaDetalle">
-              <PropertyRef Name="IdRecetaAgroquimica" />
+              <PropertyRef Name="idRecetaAgroquimica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioPerfil_Usuario">
+          <End Type="FinalModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="FinalModel.UsuarioPerfil" Role="UsuarioPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioPerfil">
+              <PropertyRef Name="idUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -688,129 +770,136 @@
           <EntitySetMapping Name="Accion">
             <EntityTypeMapping TypeName="FinalModel.Accion">
               <MappingFragment StoreEntitySet="Accion">
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idAccion" ColumnName="idAccion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AgenteFitosanitario">
             <EntityTypeMapping TypeName="FinalModel.AgenteFitosanitario">
               <MappingFragment StoreEntitySet="AgenteFitosanitario">
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
+                <ScalarProperty Name="idAgenteFitosanitario" ColumnName="idAgenteFitosanitario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Agroquimico">
             <EntityTypeMapping TypeName="FinalModel.Agroquimico">
               <MappingFragment StoreEntitySet="Agroquimico">
-                <ScalarProperty Name="UnidadMedida" ColumnName="UnidadMedida" />
-                <ScalarProperty Name="CapacidadEnvase" ColumnName="CapacidadEnvase" />
-                <ScalarProperty Name="TipoEnvase" ColumnName="TipoEnvase" />
-                <ScalarProperty Name="PrincipioActivo" ColumnName="PrincipioActivo" />
-                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-                <ScalarProperty Name="MarcaComercial" ColumnName="MarcaComercial" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="unidadMedida" ColumnName="unidadMedida" />
+                <ScalarProperty Name="capacidadEnvase" ColumnName="capacidadEnvase" />
+                <ScalarProperty Name="tipoEnvase" ColumnName="tipoEnvase" />
+                <ScalarProperty Name="principioActivo" ColumnName="principioActivo" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="marcaComercial" ColumnName="marcaComercial" />
+                <ScalarProperty Name="idAgroquimico" ColumnName="idAgroquimico" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CampoFinca">
             <EntityTypeMapping TypeName="FinalModel.CampoFinca">
               <MappingFragment StoreEntitySet="CampoFinca">
-                <ScalarProperty Name="IdProductor" ColumnName="IdProductor" />
-                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
-                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
-                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
-                <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="Calle" ColumnName="Calle" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idProductor" ColumnName="idProductor" />
+                <ScalarProperty Name="longitud" ColumnName="longitud" />
+                <ScalarProperty Name="latitud" ColumnName="latitud" />
+                <ScalarProperty Name="localidad" ColumnName="localidad" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="idCampoFinca" ColumnName="idCampoFinca" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Perfil">
             <EntityTypeMapping TypeName="FinalModel.Perfil">
               <MappingFragment StoreEntitySet="Perfil">
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idPerfil" ColumnName="idPerfil" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PerfilAccion">
             <EntityTypeMapping TypeName="FinalModel.PerfilAccion">
               <MappingFragment StoreEntitySet="PerfilAccion">
-                <ScalarProperty Name="IdAccion" ColumnName="IdAccion" />
-                <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idAccion" ColumnName="idAccion" />
+                <ScalarProperty Name="idPerfil" ColumnName="idPerfil" />
+                <ScalarProperty Name="idPerfilAccion" ColumnName="idPerfilAccion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Productor">
             <EntityTypeMapping TypeName="FinalModel.Productor">
               <MappingFragment StoreEntitySet="Productor">
-                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="cuit" ColumnName="cuit" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="idProductor" ColumnName="idProductor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RecetaAgroquimica">
             <EntityTypeMapping TypeName="FinalModel.RecetaAgroquimica">
               <MappingFragment StoreEntitySet="RecetaAgroquimica">
-                <ScalarProperty Name="IdVendedor" ColumnName="IdVendedor" />
-                <ScalarProperty Name="IdAgenteFitosanitario" ColumnName="IdAgenteFitosanitario" />
-                <ScalarProperty Name="IdProductor" ColumnName="IdProductor" />
-                <ScalarProperty Name="IdCampoFinca" ColumnName="IdCampoFinca" />
-                <ScalarProperty Name="Entregado" ColumnName="Entregado" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Diagnostico" ColumnName="Diagnostico" />
-                <ScalarProperty Name="FechaReceta" ColumnName="FechaReceta" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idVendedor" ColumnName="idVendedor" />
+                <ScalarProperty Name="idAgenteFitosanitario" ColumnName="idAgenteFitosanitario" />
+                <ScalarProperty Name="idProductor" ColumnName="idProductor" />
+                <ScalarProperty Name="idCampoFinca" ColumnName="idCampoFinca" />
+                <ScalarProperty Name="entregado" ColumnName="entregado" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+                <ScalarProperty Name="fechaReceta" ColumnName="fechaReceta" />
+                <ScalarProperty Name="idRecetaAgroquimica" ColumnName="idRecetaAgroquimica" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RecetaAgroquimicaDetalle">
             <EntityTypeMapping TypeName="FinalModel.RecetaAgroquimicaDetalle">
               <MappingFragment StoreEntitySet="RecetaAgroquimicaDetalle">
-                <ScalarProperty Name="IdAgroquimico" ColumnName="IdAgroquimico" />
-                <ScalarProperty Name="IdRecetaAgroquimica" ColumnName="IdRecetaAgroquimica" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idAgroquimico" ColumnName="idAgroquimico" />
+                <ScalarProperty Name="idRecetaAgroquimica" ColumnName="idRecetaAgroquimica" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="idRecetaAgroquimicaDetalle" ColumnName="idRecetaAgroquimicaDetalle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Solicitud">
             <EntityTypeMapping TypeName="FinalModel.Solicitud">
               <MappingFragment StoreEntitySet="Solicitud">
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="IdAgenteFitosanitario" ColumnName="IdAgenteFitosanitario" />
-                <ScalarProperty Name="IdCampoFinca" ColumnName="IdCampoFinca" />
-                <ScalarProperty Name="IdProductor" ColumnName="IdProductor" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="idAgenteFitosanitario" ColumnName="idAgenteFitosanitario" />
+                <ScalarProperty Name="idCampoFinca" ColumnName="idCampoFinca" />
+                <ScalarProperty Name="idProductor" ColumnName="idProductor" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="FinalModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioPerfil">
+            <EntityTypeMapping TypeName="FinalModel.UsuarioPerfil">
+              <MappingFragment StoreEntitySet="UsuarioPerfil">
+                <ScalarProperty Name="idPerfil" ColumnName="idPerfil" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idUsuarioPerfil" ColumnName="idUsuarioPerfil" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vendedor">
             <EntityTypeMapping TypeName="FinalModel.Vendedor">
               <MappingFragment StoreEntitySet="Vendedor">
-                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
-                <ScalarProperty Name="Cuit" ColumnName="Cuit" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="cuit" ColumnName="cuit" />
+                <ScalarProperty Name="idVendedor" ColumnName="idVendedor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

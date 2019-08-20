@@ -25,14 +25,14 @@ namespace Trabajo_Final_L4.Pages
 
     FinalEntities dataBase = new FinalEntities();
 
-    public string fecha { get { return recetaA == null ? "" : recetaA.FechaReceta.ToString("yyyy-MM-dd"); } }
-    public int agenteFito { get { return recetaA == null ? -1 : recetaA.IdAgenteFitosanitario; } }
-    public int productor { get { return recetaA == null ? -1 : recetaA.IdProductor; } }
-    public int campoFinca { get { return recetaA == null ? -1 : recetaA.IdCampoFinca; } }
-    public string diagnostico { get { return recetaA == null ? "" : recetaA.Diagnostico; } }
-    public string estado { get { return recetaA == null ? "" : recetaA.Estado; } }    
-    public int cantidad { get { return recetaD == null ? -1 : recetaD.Cantidad; } }
-    public string marcaC { get { return recetaD == null ? "" : recetaD.Agroquimico.MarcaComercial; } }
+    public string fecha { get { return recetaA == null ? "" : recetaA.fechaReceta.ToString("yyyy-MM-dd"); } }
+    public int agenteFito { get { return recetaA == null ? -1 : recetaA.idAgenteFitosanitario; } }
+    public int productor { get { return recetaA == null ? -1 : recetaA.idProductor; } }
+    public int campoFinca { get { return recetaA == null ? -1 : recetaA.idCampoFinca; } }
+    public string diagnostico { get { return recetaA == null ? "" : recetaA.diagnostico; } }
+    public string estado { get { return recetaA == null ? "" : recetaA.estado; } }    
+    public int cantidad { get { return recetaD == null ? -1 : recetaD.cantidad; } }
+    public string marcaC { get { return recetaD == null ? "" : recetaD.Agroquimico.marcaComercial; } }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -40,7 +40,7 @@ namespace Trabajo_Final_L4.Pages
       if (!string.IsNullOrWhiteSpace(id))
       {
         idRecetaA = Convert.ToInt32(id);
-        recetaA = dataBase.RecetaAgroquimica.Where(x => x.Id == idRecetaA).FirstOrDefault();
+        recetaA = dataBase.RecetaAgroquimica.Where(x => x.idRecetaAgroquimica == idRecetaA).FirstOrDefault();
       }
 
       string accion = Request.Params["accion"];
@@ -50,12 +50,13 @@ namespace Trabajo_Final_L4.Pages
 
       }
 
-      ListaProductor = dataBase.Productor.OrderBy(x => x.Nombre).ToList();
-      ListaAgenteFito = dataBase.AgenteFitosanitario.OrderBy(x => x.Nombre).ToList();
-      ListaCampoFinca = dataBase.CampoFinca.OrderBy(x => x.Calle).ToList();
-      ListaDetalleReceta = dataBase.RecetaAgroquimicaDetalle.OrderBy(x => x.Cantidad).ToList();
-      ListaVendedor = dataBase.Vendedor.OrderBy(x => x.Cuit).ToList();
-      ListaAgro = dataBase.Agroquimico.OrderBy(x => x.MarcaComercial).ToList();
+      ListaProductor = dataBase.Productor.OrderBy(x => x.nombre).ToList();
+      ListaAgenteFito = dataBase.AgenteFitosanitario.OrderBy(x => x.nombre).ToList();
+      ListaCampoFinca = dataBase.CampoFinca.OrderBy(x => x.calle).ToList();
+      ListaDetalleReceta = dataBase.RecetaAgroquimicaDetalle.OrderBy(x => x.cantidad).ToList();
+      ListaVendedor = dataBase.Vendedor.OrderBy(x => x.cuit).ToList();
+      ListaAgro = dataBase.Agroquimico.OrderBy(x => x.marcaComercial).ToList();
+
     }
     private void Guardar()
     {
@@ -72,16 +73,18 @@ namespace Trabajo_Final_L4.Pages
 
       Solicitud soliA = new Solicitud();
 
-
       if (idRecetaA == 0)
       {
         // Insertar nuevo ejemplo
-        recetaA.FechaReceta = DateTime.Parse(fecha);
-        recetaA.IdProductor = productor;
-        recetaA.IdCampoFinca = campoFinca;
-        recetaA.IdAgenteFitosanitario = agenteFitosanitario;
-        recetaA.Estado = estado;
-        recetaA.Diagnostico = diagnostico;
+        RecetaAgroquimica recetaA = new RecetaAgroquimica();
+        recetaA.fechaReceta = DateTime.Parse(fecha);
+        recetaA.idProductor = productor;
+        recetaA.idCampoFinca = campoFinca;
+        recetaA.idAgenteFitosanitario = agenteFitosanitario;
+        recetaA.estado = estado;
+        recetaA.diagnostico = diagnostico;
+        
+        //Si agrego producto, insertarlo en receta
 
         dataBase.RecetaAgroquimica.Add(recetaA);
 
@@ -89,12 +92,12 @@ namespace Trabajo_Final_L4.Pages
       else
       {
         // Editar ejemplo
-        recetaA.FechaReceta = DateTime.Parse(fecha);
-        recetaA.IdProductor = productor;
-        recetaA.IdCampoFinca = campoFinca;
-        recetaA.IdAgenteFitosanitario = agenteFitosanitario;
-        recetaA.Estado = estado;
-        recetaA.Diagnostico = diagnostico;
+        recetaA.fechaReceta = DateTime.Parse(fecha);
+        recetaA.idProductor = productor;
+        recetaA.idCampoFinca = campoFinca;
+        recetaA.idAgenteFitosanitario = agenteFitosanitario;
+        recetaA.estado = estado;
+        recetaA.diagnostico = diagnostico;
 
       }
 
