@@ -99,10 +99,13 @@
         </div>
 
         <br />
-        <br />
             
         <%-- Tabla para productos --%>
-        <table id="tableRecetasAgroProductos" style="width: 100%">
+        <h3 id="tituloRecetaProductos" style="margin: 40px 0px 40px 0px">
+            Detalle Receta 
+        </h3>
+
+        <table class="table table-striped" id="tableRecetasAgroProductos" style="width: 100%">
             <thead>
                 <tr>                   
                     <th>Marca Comercial</th>
@@ -119,8 +122,6 @@
             <a class="btn btn-outline-danger" href="RecetasAgroquimicas.aspx" role="button">Cancelar</a>
             <input type="submit" class="btn btn-success" value="Guardar"/>
         </div>
-
-
     </form>
 
 </asp:Content>

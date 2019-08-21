@@ -2,8 +2,8 @@
 
 $(document).ready(function () {
     $('#tableRecetasAgro').DataTable();
-    var tProductos = $('#tableRecetasAgroProductos').DataTable();
-    $('#tableRecetasAgroProductos_wrapper').hide();
+    $('#tableRecetasAgroProductos').hide();
+    $('#tituloRecetaProductos').hide();
     
     $("#guardarProducto").click(function () {
         var idAgroquimico = $("#selectD").val();
@@ -17,22 +17,22 @@ $(document).ready(function () {
         $('#exampleModalCenter').modal('hide');
 
         if (productos.length != 0) {
-            $('#tableRecetasAgroProductos_wrapper').show();
-            tProductos.row.add([producto.marcaComercial, producto.cantidad, '<button type="button" class="btn btn-outline-danger btn-Delete text-right">Eliminar</button>']).draw();
+            $('#tituloRecetaProductos').show();
+            $('#tableRecetasAgroProductos').show();
+            var fila = '<tr><td>' + producto.marcaComercial + '</td><td>' + producto.cantidad + '</td><td> <button type="button" class="btn btn-outline-danger btn-Delete text-right">Eliminar</button></td></tr>';
+            $("#tableRecetasAgroProductos tbody").append(fila);
         }
 
     });
 
-    //Eliminar de la tabla productos
     $('body').on('click', '.btn-Delete', function () {
-        console.log('asasa');
+        var aEliminar = $(this).closest("tr");
+        var filas = $('#tableRecetasAgroProductos tbody tr');
+        var i = filas.index(aEliminar);
 
-        for (var i = 0; i < productos.length; i++) {
-            console.log('Productos: ', productos.length);
-            console.log('Producto seleccionado: ', productos[i]);
-        }
+        productos.splice(i, 1);
+        $(this).closest("tr").remove();
     });
-
 
     $('.btnDelete').click(function () {
         let id = $(this).attr('data-id');
@@ -51,15 +51,3 @@ $(document).ready(function () {
         });
     });
 });
-
-//function creaProducto() {
-//    var idAgroquimico = $("#selectD").val();
-//    var valorAgroquimico = $("#selectD option:selected").text();;
-//    var cantidad = $("#selectCant").val();
-    
-//    tProductos.row.add({
-//        "idAgroquimico": idAgroquimico,
-//        "marcaComercial": valorAgroquimico,
-//        "cantidad": cantidad,
-//    }).draw();
-//}

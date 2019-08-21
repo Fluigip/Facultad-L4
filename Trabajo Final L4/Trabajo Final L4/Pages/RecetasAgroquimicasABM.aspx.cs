@@ -37,6 +37,7 @@ namespace Trabajo_Final_L4.Pages
     protected void Page_Load(object sender, EventArgs e)
     {
       string id = Request.QueryString["id"];
+      
       if (!string.IsNullOrWhiteSpace(id))
       {
         idRecetaA = Convert.ToInt32(id);
