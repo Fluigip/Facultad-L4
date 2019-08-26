@@ -1,10 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Site.Master" AutoEventWireup="true" CodeBehind="RecetasAgroquimicasABM.aspx.cs" Inherits="Trabajo_Final_L4.Pages.RecetasAgroquimicasABM" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../Scripts/RecetaAgroLista.js"></script>
+    <script type="text/javascript">
+        debugger
+        var productos = JSON.parse('<%=productosRD%>');
+    </script>
+    <script src="../Scripts/RecetasAgroquimicasABM.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
     <h1 style="margin: 40px 0px 40px 0px">
             Recetas Agroquimicas 
     </h1>
@@ -52,6 +56,11 @@
         <div class="form-group">
             <label for="estado">Estado</label>
             <input type="text" class="form-control" id="estado" name="estado" value="<%=estado%>"/>
+        </div>
+
+        <%-- Productos --%>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="listaProductos" name="listaProductos" value=""/>
         </div>
         
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -116,7 +125,6 @@
             <tbody>
             </tbody>
         </table>
-
 
         <div class="text-center">
             <a class="btn btn-outline-danger" href="RecetasAgroquimicas.aspx" role="button">Cancelar</a>

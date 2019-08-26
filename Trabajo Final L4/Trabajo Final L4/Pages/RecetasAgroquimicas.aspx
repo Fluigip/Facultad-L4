@@ -19,10 +19,27 @@
                     <th style="width: 15%">Diagnostico</th>
                     <th style="width: 15%">Estado</th>
                     <th style="width: 15%">Vendedor</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                
+                <%foreach (var item in ListaRecetasAgro) {%>
+                    <tr>
+                        <td><%=item.fechaReceta%></td>
+                        <td><%=item.AgenteFitosanitario.nombre%></td>
+                        <td><%=item.Productor.nombre%></td>
+                        <td><%=item.CampoFinca.calle%></td>
+                        <td><%=item.diagnostico%></td>
+                        <td><%=item.estado%></td>
+                        <td><%=item.Vendedor.razonSocial%></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Acciones">
+                              <a href="RecetasAgroquimicasABM.aspx?id=<%=item.idRecetaAgroquimica %>" class="btn btn-outline-success" role="button">Editar</a>       
+                              <button type="button" class="btn btn-outline-danger btnDelete" data-id="<%=item.idRecetaAgroquimica %>">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                <%}%>
             </tbody>
         </table>
     </div>
