@@ -13,7 +13,7 @@
         </h1>    
         <table id="tableSolicitud" style="width: 100%">
             <thead>
-                <tr>                   
+                <tr>
                     <th style="width: 20%">Fecha</th>
                     <th style="width: 20%">Productor</th>
                     <th style="width: 20%">Campo Finca</th>
@@ -29,16 +29,16 @@
                         <td><%=item.Productor.nombre%></td>
                         <td><%=item.CampoFinca.calle%></td>
                         <td><%=item.AgenteFitosanitario.nombre%></td>
-                        <td><%=item.estado%></td>                       
+                        <td><%=item.estado%></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Acciones">
-                              <a href="SolicitudesABM.aspx?id=<%=item.idSolicitud %>" class="btn btn-outline-success" role="button">Editar</a>       
+                              <a href="SolicitudesABM.aspx?id=<%=item.idSolicitud %>" class="btn btn-outline-success" role="button">Editar</a>
                               <button type="button" class="btn btn-outline-danger btnDelete" data-id="<%=item.idAgenteFitosanitario %>">Eliminar</button>
                             </div>
                         </td>
                     </tr>
                 <%}%>
-            </tbody>            
-        </table>    
+            </tbody>
+        </table>
     </div>
 </asp:Content>

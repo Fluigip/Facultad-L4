@@ -21,7 +21,7 @@ namespace Trabajo_Final_L4.Models
         }
     
         public int idRecetaAgroquimica { get; set; }
-        public System.DateTime fechaReceta { get; set; }
+        public DateTime fechaReceta { get; set; }
         public string diagnostico { get; set; }
         public string estado { get; set; }
         public bool entregado { get; set; }

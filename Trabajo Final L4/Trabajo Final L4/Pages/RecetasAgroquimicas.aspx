@@ -25,7 +25,7 @@
             <tbody>
                 <%foreach (var item in ListaRecetasAgro) {%>
                     <tr>
-                        <td><%=item.fechaReceta%></td>
+                        <td><%=item.fechaReceta.ToString("dd/MM/yyyy")%></td>
                         <td><%=item.AgenteFitosanitario.nombre%></td>
                         <td><%=item.Productor.nombre%></td>
                         <td><%=item.CampoFinca.calle%></td>
