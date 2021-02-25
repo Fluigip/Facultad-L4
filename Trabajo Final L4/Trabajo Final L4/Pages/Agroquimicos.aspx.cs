@@ -19,7 +19,7 @@ namespace Trabajo_Final_L4.Pages
 
       ListaAgroquimicos = database.Agroquimico.OrderBy(x => x.marcaComercial).ToList();
 
-        }
+    }
 
     [WebMethod]
     public static string Eliminar(int id)

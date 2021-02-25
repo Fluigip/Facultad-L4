@@ -39,5 +39,6 @@ namespace Trabajo_Final_L4.Models
         public virtual DbSet<UsuarioPerfil> UsuarioPerfil { get; set; }
         public virtual DbSet<Vendedor> Vendedor { get; set; }
         public virtual DbSet<VentasAgroquimicos> VentasAgroquimicos { get; set; }
+
     }
 }
