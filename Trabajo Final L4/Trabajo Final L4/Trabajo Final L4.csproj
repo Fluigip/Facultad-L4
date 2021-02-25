@@ -256,6 +256,7 @@
     <Content Include="Scripts\RecetasAgroquimicasABM.js" />
     <Content Include="Scripts\SolicitudesLista.js" />
     <Content Include="Scripts\VentaAgroLista.js" />
+    <Content Include="Styles\font-awesome.min.css" />
     <Content Include="Styles\lib\bootstrap.css" />
     <Content Include="Styles\lib\dataTables.bootstrap4.css" />
     <Content Include="Web.config" />
