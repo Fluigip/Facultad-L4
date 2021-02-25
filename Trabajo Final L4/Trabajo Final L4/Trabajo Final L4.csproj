@@ -150,6 +150,9 @@
     <Compile Include="Models\Vendedor.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VentasAgroquimicos.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Agroquimicos.aspx.cs">
       <DependentUpon>Agroquimicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

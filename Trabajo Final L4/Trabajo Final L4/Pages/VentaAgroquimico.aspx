@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     
     <div>
         <h1 style="margin: 40px 0px 40px 0px">
@@ -12,10 +11,10 @@
         <table id="tablaVenta" style="width: 100%">
             <thead>
                 <tr>
+                    <th style="width: 25%">Nombre</th>
+                    <th style="width: 25%">Apellido</th>
+                    <th style="width: 25%">Codigo de factura</th>
                     <th>Detalle</th>
-                    <th style="width: 25%">Codigo</th>
-                    <th style="width: 25%">Cantidad</th>
-                    <th style="width: 25%">Precio</th>
                 </tr>
             </thead>
             <tbody>

@@ -128,6 +128,21 @@
           <Property Name="cuit" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="razonSocial" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="VentasAgroquimicos">
+          <Key>
+            <PropertyRef Name="IdVentaAgroquimico" />
+          </Key>
+          <Property Name="IdVentaAgroquimico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApellidoCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DireccionCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelefonoCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DireccionEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodigoPostalEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdAgroquimico" Type="int" Nullable="false" />
+          <Property Name="PrecioAgroquimico" Type="int" Nullable="false" />
+        </EntityType>
         <Association Name="FK_CampoFinca_Productor">
           <End Role="Productor" Type="Self.Productor" Multiplicity="1" />
           <End Role="CampoFinca" Type="Self.CampoFinca" Multiplicity="*" />
@@ -296,6 +311,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VentaAgroquimico_Agroquimico">
+          <End Role="Agroquimico" Type="Self.Agroquimico" Multiplicity="1" />
+          <End Role="VentasAgroquimicos" Type="Self.VentasAgroquimicos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Agroquimico">
+              <PropertyRef Name="idAgroquimico" />
+            </Principal>
+            <Dependent Role="VentasAgroquimicos">
+              <PropertyRef Name="IdVentaAgroquimico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="FinalModelStoreContainer">
           <EntitySet Name="Accion" EntityType="Self.Accion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AgenteFitosanitario" EntityType="Self.AgenteFitosanitario" Schema="dbo" store:Type="Tables" />
@@ -310,6 +337,7 @@
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsuarioPerfil" EntityType="Self.UsuarioPerfil" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vendedor" EntityType="Self.Vendedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VentasAgroquimicos" EntityType="Self.VentasAgroquimicos" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CampoFinca_Productor" Association="Self.FK_CampoFinca_Productor">
             <End Role="Productor" EntitySet="Productor" />
             <End Role="CampoFinca" EntitySet="CampoFinca" />
@@ -365,6 +393,10 @@
           <AssociationSet Name="FK_UsuarioPerfil_Usuario" Association="Self.FK_UsuarioPerfil_Usuario">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="UsuarioPerfil" EntitySet="UsuarioPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VentaAgroquimico_Agroquimico" Association="Self.FK_VentaAgroquimico_Agroquimico">
+            <End Role="Agroquimico" EntitySet="Agroquimico" />
+            <End Role="VentasAgroquimicos" EntitySet="VentasAgroquimicos" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -441,6 +473,11 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="UsuarioPerfil" EntitySet="UsuarioPerfil" />
           </AssociationSet>
+          <EntitySet Name="VentasAgroquimicos" EntityType="FinalModel.VentasAgroquimicos" />
+          <AssociationSet Name="FK_VentaAgroquimico_Agroquimico1" Association="FinalModel.FK_VentaAgroquimico_Agroquimico1">
+            <End Role="Agroquimico" EntitySet="Agroquimico" />
+            <End Role="VentasAgroquimicos" EntitySet="VentasAgroquimicos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Accion">
           <Key>
@@ -473,6 +510,7 @@
           <Property Name="capacidadEnvase" Type="Double" Nullable="false" />
           <Property Name="unidadMedida" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RecetaAgroquimicaDetalle" Relationship="FinalModel.FK_RecetaAgroquimicaDetalle_Agroquimico" FromRole="Agroquimico" ToRole="RecetaAgroquimicaDetalle" />
+          <NavigationProperty Name="VentasAgroquimicos" Relationship="FinalModel.FK_VentaAgroquimico_Agroquimico1" FromRole="Agroquimico" ToRole="VentasAgroquimicos" />
         </EntityType>
         <EntityType Name="CampoFinca">
           <Key>
@@ -761,6 +799,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="VentasAgroquimicos">
+          <Key>
+            <PropertyRef Name="IdVentaAgroquimico" />
+          </Key>
+          <Property Name="IdVentaAgroquimico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoCliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DireccionCliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonoCliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombreEmpresa" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DireccionEmpresa" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoPostalEmpresa" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdAgroquimico" Type="Int32" Nullable="false" />
+          <Property Name="PrecioAgroquimico" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Agroquimico" Relationship="FinalModel.FK_VentaAgroquimico_Agroquimico1" FromRole="VentasAgroquimicos" ToRole="Agroquimico" />
+        </EntityType>
+        <Association Name="FK_VentaAgroquimico_Agroquimico1">
+          <End Type="FinalModel.Agroquimico" Role="Agroquimico" Multiplicity="1" />
+          <End Type="FinalModel.VentasAgroquimicos" Role="VentasAgroquimicos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Agroquimico">
+              <PropertyRef Name="idAgroquimico" />
+            </Principal>
+            <Dependent Role="VentasAgroquimicos">
+              <PropertyRef Name="IdVentaAgroquimico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -900,6 +966,22 @@
                 <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
                 <ScalarProperty Name="cuit" ColumnName="cuit" />
                 <ScalarProperty Name="idVendedor" ColumnName="idVendedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VentasAgroquimicos">
+            <EntityTypeMapping TypeName="FinalModel.VentasAgroquimicos">
+              <MappingFragment StoreEntitySet="VentasAgroquimicos">
+                <ScalarProperty Name="PrecioAgroquimico" ColumnName="PrecioAgroquimico" />
+                <ScalarProperty Name="IdAgroquimico" ColumnName="IdAgroquimico" />
+                <ScalarProperty Name="CodigoPostalEmpresa" ColumnName="CodigoPostalEmpresa" />
+                <ScalarProperty Name="DireccionEmpresa" ColumnName="DireccionEmpresa" />
+                <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+                <ScalarProperty Name="TelefonoCliente" ColumnName="TelefonoCliente" />
+                <ScalarProperty Name="DireccionCliente" ColumnName="DireccionCliente" />
+                <ScalarProperty Name="ApellidoCliente" ColumnName="ApellidoCliente" />
+                <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+                <ScalarProperty Name="IdVentaAgroquimico" ColumnName="IdVentaAgroquimico" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

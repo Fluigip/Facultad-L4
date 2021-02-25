@@ -30,5 +30,6 @@ namespace Trabajo_Final_L4.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RecetaAgroquimicaDetalle> RecetaAgroquimicaDetalle { get; set; }
+        public virtual VentasAgroquimicos VentasAgroquimicos { get; set; }
     }
 }

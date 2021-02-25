@@ -7,6 +7,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../Styles/lib/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="../Styles/lib/dataTables.bootstrap4.css" />
+    <link rel="stylesheet" href="../Styles/font-awesome.min.css" />
     <script src="../Scripts/lib/jquery-3.3.1.js"></script>
     <script src="../Scripts/lib/bootstrap.js"></script>
     <script src="../Scripts/lib/jquery.dataTables.js"></script>

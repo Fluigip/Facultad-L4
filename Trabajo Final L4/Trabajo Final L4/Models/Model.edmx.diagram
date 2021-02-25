@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4e110d0319cc434c8131c4ab3312ee3a" Name="Diagram1" ZoomLevel="92">
+      <Diagram DiagramId="4e110d0319cc434c8131c4ab3312ee3a" Name="Diagram1" ZoomLevel="69">
         <EntityTypeShape EntityType="FinalModel.Accion" Width="1.5" PointX="5.75" PointY="17" />
         <EntityTypeShape EntityType="FinalModel.AgenteFitosanitario" Width="1.5" PointX="3" PointY="0.75" />
         <EntityTypeShape EntityType="FinalModel.Agroquimico" Width="1.5" PointX="8.25" PointY="0.875" />
@@ -32,6 +32,8 @@
         <AssociationConnector Association="FinalModel.FK_RecetaAgroquimica_Vendedor" />
         <AssociationConnector Association="FinalModel.FK_RecetaAgroquimicaDetalle_RecetaAgroquimica" />
         <AssociationConnector Association="FinalModel.FK_UsuarioPerfil_Usuario" />
+        <EntityTypeShape EntityType="FinalModel.VentasAgroquimicos" Width="1.5" PointX="13" PointY="1.125" />
+        <AssociationConnector Association="FinalModel.FK_VentaAgroquimico_Agroquimico1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

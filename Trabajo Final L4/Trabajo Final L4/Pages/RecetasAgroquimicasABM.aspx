@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
-        debugger
         var productos = JSON.parse('<%=productosRD%>');
     </script>
     <script src="../Scripts/RecetasAgroquimicasABM.js"></script>
@@ -10,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <h1 style="margin: 40px 0px 40px 0px">
-            Recetas Agroquimicas 
+        Recetas Agroquimicas
     </h1>
 
     <form method="post">
@@ -31,7 +30,6 @@
 
         <div class="form-group">
             <label for="productor">Productor</label>
-
             <select id="selectProduc" name="selectProduc" class="form-control">
                 <%foreach (var item in ListaProductor) {%>
                     <option value="<%=item.idProductor%>" <%if (productor == item.idProductor) {%> selected <%} %>><%=item.nombre%></option>

@@ -18,3 +18,15 @@
         });
     });
 });
+
+inicializarTooltips();
+
+/*
+* Inicialza los tooltips de Bootstrap
+*/
+function inicializarTooltips() {
+    $('.custom-tooltip').tooltip(
+        {
+            container: 'body'
+        });
+}
