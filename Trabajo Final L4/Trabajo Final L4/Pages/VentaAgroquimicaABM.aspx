@@ -65,6 +65,7 @@
          
            <%-- Lista de Agroquimico --%>
            <div class="row agroquimico-detalle">
+               <input type="hidden" id="idAgregarDetalle"/>
                <div class="col-5">
                     <label for="listaAgroquimico">Agroquimicos</label>
                     <select id="agroquimico" name="agroquimico" class="form-control">
@@ -89,37 +90,31 @@
                </div>
           </div>
           <br />
-             
-               <%-- Tabla productos --%>
-               <table id="table-agroquimicos" class="table table-bordered table-condensed table-striped mt-2">
-                      <thead>
-                             <tr>
-                                  <th class="valign-middle text-align-center" style="width: 100px; text-align: center;">Codigo</th>
-                                  <th class="valign-middle text-align-center" style="width: 200px; text-align: center;">Marca Comercial</th>
-                                  <th class="valign-middle text-align-center" style="width: 100px; text-align: center;">Capacidad</th>
-                                  <th class="valign-middle text-align-center" style="width: 160px; text-align: center;">Unidad de Medida</th>
-                                  <th class="valign-middle text-align-center" style="width: 160px; text-align: center;">Precio</th>
-                                  <th class="valign-middle text-align-center" style="width: 70px; text-align: center;">
-                                      <button type="button" class="btn btn-primary agregar-Producto" style="margin-top: -8px; margin-bottom: -6px;">
-                                            Nuevo
-                                      </button>
-                                      <%--BOTONES ACCIONES--%>
-                                  </th>
-                             </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-               </table>
-          
+            <%-- Tabla productos --%>
+            <table id="table-agroquimicos" class="table table-bordered table-condensed table-striped mt-2">
+                  <thead>
+                          <tr>
+                              <th class="valign-middle text-align-center" style="width: 100px; text-align: center;">Codigo</th>
+                              <th class="valign-middle text-align-center" style="width: 300px; text-align: center;">Marca Comercial</th>
+                              <th class="valign-middle text-align-center" style="width: 100px; text-align: center;">Capacidad</th>
+                              <th class="valign-middle text-align-center" style="width: 140px; text-align: center;">Unidad de Medida</th>
+                              <th class="valign-middle text-align-center" style="width: 100px; text-align: center;">Cantidad</th>
+                              <th class="valign-middle text-align-center" style="width: 100px; text-align: center;">Precio</th>
+                              <th class="valign-middle text-align-center" style="width: 70px; text-align: center;">
+                                <button type="button" class="btn btn-primary agregar-Producto" style="margin-top: -8px; margin-bottom: -6px;">
+                                    <i class="fas fa-plus-circle"></i>
+                                </button>
+                                  <%--BOTONES ACCIONES--%>
+                             </th>
+                         </tr>
+                 </thead>
+                 <tbody>
+                 </tbody>
+          </table>
           <div class="text-center">
-            <a class="btn btn-outline-danger" href="VentaAgroquimico.aspx" role="button">Cancelar</a>
-            <input type="submit" class="btn btn-success" value="Guardar"/>
+                <a class="btn btn-outline-danger" href="VentaAgroquimico.aspx" role="button">Cancelar</a>
+                <input type="submit" class="btn btn-success guardarVenta" value="Guardar"/>
           </div>
           <br />
    </form>
-
-
-
-
-
 </asp:Content>

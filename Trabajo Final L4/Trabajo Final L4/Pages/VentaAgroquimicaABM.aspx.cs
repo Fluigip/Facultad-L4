@@ -35,15 +35,15 @@ namespace Trabajo_Final_L4.Pages
             {
                 FinalEntities dataBase = new FinalEntities();
 
-                Agroquimico busqueda = dataBase.Agroquimico.Where(x => x.idAgroquimico == id).FirstOrDefault();
+                Agroquimico agro = dataBase.Agroquimico.Where(x => x.idAgroquimico == id).FirstOrDefault();
 
                 jsonObject["resultado"] = 1;
-                jsonObject["marcaComercial"] = busqueda.marcaComercial;
-                jsonObject["tipoEnvase"] = busqueda.tipoEnvase;
-                jsonObject["unidadMedida"] = busqueda.unidadMedida;
-                jsonObject["codigo"] = busqueda.codigo;
-                jsonObject["capacidadEnvase"] = busqueda.capacidadEnvase;
-
+                jsonObject["id"] = agro.idAgroquimico;
+                jsonObject["marcaComercial"] = agro.marcaComercial;
+                jsonObject["tipoEnvase"] = agro.tipoEnvase;
+                jsonObject["unidadMedida"] = agro.unidadMedida;
+                jsonObject["codigo"] = agro.codigo;
+                jsonObject["capacidadEnvase"] = agro.capacidadEnvase;
 
             }
             catch (Exception ex)
